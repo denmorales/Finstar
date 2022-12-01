@@ -15,9 +15,9 @@ namespace Business_Logic.Services
 
         public Task<GetRowDyIdResponse> GetRowByIdAsync(long id, CancellationToken token);
 
-        public Task<long> DeleteRowByIdAsync(long id, CancellationToken token);
+        public Task DeleteRowByIdAsync(long id, CancellationToken token);
 
-        public Task<long> UpsertHeaderByRowIdAsync(UpsertHeaderByRowIdRequest request, CancellationToken token);
+        public Task<long> UpdateHeaderByRowIdAsync(UpdateHeaderByRowIdRequest request, CancellationToken token);
 
         public Task<GetCommentByRowIdResponse> GetCommentsByRowIdAsync(long id, CancellationToken token);
 

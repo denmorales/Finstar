@@ -31,6 +31,10 @@ builder.Services.AddDbContext<FinstarContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ITodoService, TodoService>();
 builder.Services.AddScoped<ITodosRepository, TodosRepository>();
+
+builder.Services.AddScoped<ITodoLogger, TodoLogger>();
+builder.Services.AddScoped<ITodoLogRepository, TodoLogRepository>();
+
 builder.Services.AddAutoMapper(typeof(BusinessLogicProfile),typeof(DataAccessProfile));
 builder.Logging.ClearProviders();
 builder.Host.UseNLog();

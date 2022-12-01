@@ -1,12 +1,17 @@
-﻿using Application.Contracts.Models;
+﻿using Application.Api.Filters;
+using Application.Contracts.Models;
 using Business_Logic.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Application.Api.Controllers
 {
+    /// <summary>
+    /// методы работы с ToDo
+    /// </summary>
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [TypeFilter(typeof(ApiResultLoggerFilter))]
     public class TodoController : ControllerBase
     {
         private readonly ILogger<TodoController> _logger;
@@ -51,7 +56,7 @@ namespace Application.Api.Controllers
         /// <param name="token"></param>
         /// <returns></returns>
         [HttpDelete]
-        public Task<long> DeleteRowById(long id, CancellationToken token) => 
+        public Task DeleteRowById(long id, CancellationToken token) => 
             _todoService.DeleteRowByIdAsync(id, token);
         /// <summary>
         /// обновить заголовок к записи по ее ID
@@ -60,8 +65,8 @@ namespace Application.Api.Controllers
         /// <param name="token"></param>
         /// <returns></returns>
         [HttpPut]
-        public Task UpsertHeaderByRowId(UpsertHeaderByRowIdRequest request, CancellationToken token) =>
-            _todoService.UpsertHeaderByRowIdAsync(request, token);
+        public Task UpdateHeaderByRowId(UpdateHeaderByRowIdRequest request, CancellationToken token) =>
+            _todoService.UpdateHeaderByRowIdAsync(request, token);
         /// <summary>
         /// получить все комментарии по ID строки
         /// </summary>

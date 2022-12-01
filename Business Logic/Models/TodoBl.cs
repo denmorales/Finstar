@@ -9,4 +9,5 @@ public class TodoBl
     public string Category { get; set; }
     public string Colour { get; set; }
     public CommentBl[] Comments { get; set; }
+    public string Hash { get; set; }
 }

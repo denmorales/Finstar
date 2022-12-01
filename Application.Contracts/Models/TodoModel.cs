@@ -15,4 +15,5 @@ public class TodoModel
     public string Category { get; set; }
     public string Colour { get; set; }
     public CommentModel[] Comments { get; set; }
+    public string Hash { get; set; }
 }

@@ -1,8 +1,8 @@
 ﻿namespace Application.Contracts.Models
 {
-    public class UpsertHeaderByRowIdRequest
+    public class UpdateHeaderByRowIdRequest
     {
         public long Id { get; set; }
-        public string Comment { get; set; }
+        public string Header { get; set; }
     }
 }
