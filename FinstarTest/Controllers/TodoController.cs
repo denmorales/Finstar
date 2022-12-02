@@ -7,19 +7,18 @@ using Microsoft.AspNetCore.SignalR;
 namespace Application.Api.Controllers
 {
     /// <summary>
-    /// методы работы с ToDo
+    /// методы работы с Тodo
     /// </summary>
     [Route("api/[controller]/[action]")]
     [ApiController]
     [TypeFilter(typeof(ApiResultLoggerFilter))]
     public class TodoController : ControllerBase
     {
-        private readonly ILogger<TodoController> _logger;
         private readonly ITodoService _todoService;
-
+        /// <param name="logger"></param>
+        /// <param name="todoService"></param>
         public TodoController(ILogger<TodoController> logger, ITodoService todoService)
         {
-            _logger = logger;
             _todoService = todoService;
         }
 

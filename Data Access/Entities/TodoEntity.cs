@@ -10,8 +10,7 @@ namespace Data_Access.Entities
         public Status Status { get; set; }
         public Category Category { get; set; }
         public Colour Colour { get; set; }
-
-        public ICollection<CommentEntity> Comments { get; set; }    
+        public List<CommentEntity> Comments { get; set; }    
 
     }
 }
